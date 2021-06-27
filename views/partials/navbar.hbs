@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-xl navbar-light bg-light">
+    <a href="/" class="navbar-brand"><i class="fa fa-cube"></i><b style="color: coral;">Toy</b> <b>PepsimanNo1</b></a>
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- Collection of nav links, forms, and other content for toggling -->
+    <div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
+        <div class="navbar-nav">
+            <a href="/" class="nav-item nav-link active">Home</a>
+            <a href="#" class="nav-item nav-link">About</a>
+        </div>
+        <form method="GET" class="navbar-form form-inline" action="">
+            <div class="input-group search-box">
+                <input name="search" type="text" id="search" class="form-control" placeholder="Search by Name">
+                <span class="input-group-addon"><i class="material-icons">&#xE8B6;</i></span>
+            </div>
+        </form>
+        <div class="navbar-nav ml-auto">
+            {{#isEqual user "Guest"}}
+            <a href="/login" class="nav-link user-action">Login</a>
+            {{else}}
+            <div class="nav-item dropdown">
+                <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle user-action">{{user}}<b
+                        class="caret"></b></a>
+                <div class="dropdown-menu">
+                    <a href="#" class="dropdown-item"><i class="fa fa-user-o"></i> Profile</a></a>
+                    <a href="#" class="dropdown-item"><i class="fa fa-calendar-o"></i> Calendar</a></a>
+                    <a href="#" class="dropdown-item"><i class="fa fa-sliders"></i> Settings</a></a>
+                    <div class="dropdown-divider"></div>
+                    <a href="/logout" class="dropdown-item"><i class="material-icons">&#xE8AC;</i> Logout</a></a>
+                </div>
+            </div>
+            {{/isEqual}}
+        </div>
+    </div>
+</nav>
